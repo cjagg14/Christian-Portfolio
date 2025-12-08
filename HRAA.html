@@ -1,0 +1,140 @@
+<link rel="stylesheet" href="stylesHRAA.css">
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Hybrid Rocket Analysis App</title>
+    <link rel="stylesheet" href="stylesHRAA.css">
+</head>
+
+<body>
+
+        <header id="scroll-header">
+        <nav class="nav-bar">
+            <!-- Right side: nav links -->
+            <div class="nav-links">
+                <a href="Home Page.html">Home</a>
+
+                <div class="dropdown">
+                    <button class="dropbtn">Projects ▾</button>
+                    <div class="dropdown-content">
+                        <a href="Anti-Drone.html">Anti-Drone Technology</a>
+                        <a href="AAIA Project.html">AIAA Space Weather Mission</a>
+                        <a href="Glider Design.html">Glider Design Project</a>
+                        <a href="HRAA.html">Hybrid Rocket Analysis App</a>
+                        <a href="Jack Project.html">Aircraft Jack Project</a>
+                        <a href="Mechanical Robot.html">Mechanical Robot Project</a>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Left side: contact -->
+            <div class="nav-contact">
+                <a href="mailto:christian.jaggard@torontomu.ca">Email</a>
+                <a href="https://www.linkedin.com/in/christian-jaggard" target="_blank">LinkedIn</a>
+            </div>
+        </nav>
+    </header>
+
+    <!-- IMAGE SECTION -->
+    <section class="img">
+        <div class="img-img">
+            <img src="images/Hybrid Rocket Image.png" alt="HRAA">
+        </div>
+    </section>
+
+    <!-- HERO SECTION -->
+    <header class="hero">
+        <div class="overlay"></div>
+        <h1>Hybrid Rocket Analysis App</h1>
+    </header>
+
+
+    <!-- ABOUT SECTION -->
+    <section class="about">
+        <div class="about-text">
+            <h3>Project Description</h3>
+            <p>
+                    While working on the MetRocketry design team (one of TMU's rocketry design team), 
+                    I was tasked with modeling how the combustion chamber and other properties would 
+                    effect the outcome of a hybrid rocket. I then took it upon myself, creating an 
+                    application that can be use to model a hybrid rocket. Using HRAP 
+                    (another application found on the internet) I started taking in some ideas on how 
+                    I want my application to function.
+            </p>
+        </div>
+
+    </section>
+
+    <!-- INFORMATION SECTION 1-->
+     <section class="info">
+        <div class="info-img">
+            <img src="images/HRAA Inputs.png" alt="HRAA Inputs">
+        </div>
+    </section>
+
+    <!-- INFORMATION SECTION 2-->
+     <section class="info2">
+        <div class="info2-text">
+            <p>
+                After a lot of trial and error, I have created the application seen 
+                above. This application uses different properties found from the 
+                hybrid rocket and a few other variables allowing for a rough estimate 
+                on the thrust, specific impulse, and regression rate. This app can 
+                also produce many different kinds of graphs by allowing the user to 
+                change the x and y plots to what they desire. This is demonstrated 
+                in the image below.
+            </p>
+        </div>
+    </section>
+
+    <!-- INFORMATION SECTION 3-->
+     <section class="info3">
+        <div class="info3-img">
+            <img src="images/HRAA Graph.png" alt="HRAA Graph">
+        </div>
+    </section>
+
+    <!-- INFORMATION SECTION 4-->
+     <section class="info4">
+        <div class="info4-text">
+            <p>
+                Although the results aren't 100% accurate they still provide a 
+                rough estimate of what the rocket will do. This is useful as you 
+                can quickly see how different parameters change the outcome of the 
+                rocket.
+            </p>
+        </div>
+    </section>
+    <!-- CONTACT SECTION -->
+        <section class="contact">
+            <hr class="divider">
+            <div class="contact-content">
+                <h3>CONTACT</h3>
+                <p>Email: christian.jaggard@torontomu.ca</p>
+                <p>Phone: +1 236-457-2372</p>
+            <p>LinkedIn: <a href="https://www.linkedin.com/in/christian-jaggard" target="_blank">linkedin.com/in/christian-jaggard</a></p>
+        </div>
+    </section>
+
+    <script>
+    let lastScroll = 0;
+    const header = document.getElementById("scroll-header");
+
+    window.addEventListener("scroll", () => {
+        let currentScroll = window.pageYOffset;
+
+        if (currentScroll > lastScroll) {
+            // scrolling DOWN → hide header
+            header.classList.add("hide");
+        } else {
+            // scrolling UP → show header
+            header.classList.remove("hide");
+        }
+
+        lastScroll = currentScroll;
+    });
+    </script>
+
+</body>
+</html>
