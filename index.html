@@ -1,0 +1,160 @@
+<link rel="stylesheet" href="styleshomepage.css">
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Portfolio – Christian Jaggard</title>
+    <link rel="stylesheet" href="styleshomepage.css">
+</head>
+
+<body>
+
+    <header id="scroll-header">
+        <nav class="nav-bar">
+            <!-- Right side: nav links -->
+            <div class="nav-links">
+                <a href="Home Page.html">Home</a>
+
+                <div class="dropdown">
+                    <button class="dropbtn">Projects ▾</button>
+                    <div class="dropdown-content">
+                        <a href="Anti-Drone.html">Anti-Drone Technology</a>
+                        <a href="AAIA Project.html">AIAA Space Weather Mission</a>
+                        <a href="Glider Design.html">Glider Design Project</a>
+                        <a href="HRAA.html">Hybrid Rocket Analysis App</a>
+                        <a href="Jack Project.html">Aircraft Jack Project</a>
+                        <a href="Mechanical Robot.html">Mechanical Robot Project</a>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Left side: contact -->
+            <div class="nav-contact">
+                <a href="mailto:christian.jaggard@torontomu.ca">Email</a>
+                <a href="https://www.linkedin.com/in/christian-jaggard" target="_blank">LinkedIn</a>
+            </div>
+        </nav>
+    </header>
+
+
+
+    <!-- HERO SECTION -->
+    <header class="hero">
+        <div class="overlay"></div>
+        <h1>Portfolio</h1>
+        <h2>Christian Jaggard</h2>
+        <div class="corner-container">
+        <h3>NASA</h3>
+        <p>Image Provided From NASA</p>
+        </div>
+    </header>
+
+
+    <!-- ABOUT SECTION -->
+    <section class="about">
+        <div class="about-text">
+            <h3>ABOUT</h3>
+            <p>
+                I am a motivated student with experience in aerospace systems,
+                orbital design, embedded electronics, and engineering analysis.
+                I enjoy working on ambitious technical projects and designing
+                systems that make a real impact.
+            </p>
+            <a class="button" href="#projects">Explore</a>
+        </div>
+
+        <div class="about-img">
+            <img src="images/Profile Picture.jpg" alt="Profile Photo">
+        </div>
+    </section>
+
+
+    <!-- PROJECTS SECTION -->
+    <section id="projects" class="projects">
+        <h3 class="section-title">PROJECTS</h3>
+
+        <div class="project-grid">
+
+            <!-- PROJECT 1 -->
+            <div class="project-card">
+                <a href="Anti-Drone.html">
+                    <img src="images/Complete System.png" alt="Anti-Drone Tech">
+                    <p>Anti-Drone Technology</p>
+                </a>
+            </div>
+
+            <!-- PROJECT 2 -->
+            <div class="project-card">
+                <a href="AAIA Project.html">
+                    <img src="images/Top View of Trajectory.png" alt="Cerberus Mission">
+                    <p>AIAA-Based Space Weather Mission</p>
+                </a>
+            </div>
+
+            <!-- PROJECT 3 -->
+            <div class="project-card">
+                <a href="Glider Design.html">
+                    <img src="images/Glider Car Style Render.jpg" alt="Glider Design">
+                    <p>Glider Design Project</p>
+                </a>
+            </div>
+
+            <!-- PROJECT 4 -->
+            <div class="project-card">
+                <a href="HRAA.html">
+                    <img src="images/Hybrid Rocket Image.png" alt="Analysis App">
+                    <p>Hybrid Rocket Analysis App</p>
+                </a>
+            </div>
+
+            <!-- PROJECT 5 -->
+            <div class="project-card">
+                <a href="Jack Project.html">
+                    <img src="images/Jack Render.PNG" alt="Jack Design">
+                    <p>Aircraft Jack Project</p>
+                </a>
+            </div>
+
+            <!-- PROJECT 6 -->
+            <div class="project-card">
+                <a href="Mechanical Robot.html">
+                    <img src="images/Robot Render.png" alt="Robot Project">
+                    <p>Mechanical Robot Project</p>
+                </a>
+            </div>
+
+        </div>
+    </section>
+
+    <!-- CONTACT SECTION -->
+        <section class="contact">
+            <hr class="divider">
+            <div class="contact-content">
+                <h3>CONTACT</h3>
+                <p>Email: christian.jaggard@torontomu.ca</p>
+                <p>Phone: +1 236-457-2372</p>
+            <p>LinkedIn: <a href="https://www.linkedin.com/in/christian-jaggard" target="_blank">linkedin.com/in/christian-jaggard</a></p>
+        </div>
+    </section>
+
+    <script>
+    let lastScroll = 0;
+    const header = document.getElementById("scroll-header");
+
+    window.addEventListener("scroll", () => {
+        let currentScroll = window.pageYOffset;
+
+        if (currentScroll > lastScroll) {
+            // scrolling DOWN → hide header
+            header.classList.add("hide");
+        } else {
+            // scrolling UP → show header
+            header.classList.remove("hide");
+        }
+
+        lastScroll = currentScroll;
+    });
+    </script>
+
+</body>
+</html>
