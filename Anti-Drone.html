@@ -1,0 +1,101 @@
+<link rel="stylesheet" href="stylesantidrone.css">
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Anti-Drone Project</title>
+    <link rel="stylesheet" href="stylesantidrone.css">
+</head>
+
+<body>
+
+        <header id="scroll-header">
+        <nav class="nav-bar">
+            <!-- Right side: nav links -->
+            <div class="nav-links">
+                <a href="index.html">Home</a>
+
+                <div class="dropdown">
+                    <button class="dropbtn">Projects ▾</button>
+                    <div class="dropdown-content">
+                        <a href="Anti-Drone.html">Anti-Drone Technology</a>
+                        <a href="AAIA Project.html">AIAA Space Weather Mission</a>
+                        <a href="Glider Design.html">Glider Design Project</a>
+                        <a href="HRAA.html">Hybrid Rocket Analysis App</a>
+                        <a href="Jack Project.html">Aircraft Jack Project</a>
+                        <a href="Mechanical Robot.html">Mechanical Robot Project</a>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Left side: contact -->
+            <div class="nav-contact">
+                <a href="mailto:christian.jaggard@torontomu.ca">Email</a>
+                <a href="https://www.linkedin.com/in/christian-jaggard" target="_blank">LinkedIn</a>
+            </div>
+        </nav>
+    </header>
+
+    <!-- HERO SECTION -->
+    <header class="hero">
+        <div class="overlay"></div>
+        <h1>Anti-Drone Project</h1>
+    </header>
+
+
+    <!-- ABOUT SECTION -->
+    <section class="about">
+        <div class="about-text">
+            <h3>Project Description</h3>
+            <p>
+                In my fourth year of study, I undertook a project that integrated 
+                the use of an Arduino kit alongside a 3D printer to engineer a specialized 
+                device. The primary objective of this endeavor was to develop an attachment 
+                for a drone, designed specifically to intercept and capture drones operating 
+                within restricted airspace. This project not only honed my technical skills in 
+                programming and 3D modeling but also deepened my understanding in drone technology 
+                and its applications in maintaining security. Shown below is a video of how the device works:
+            </p>
+        </div>
+
+        <div class="about-img">
+            <video width="100%" height="auto" autoplay muted loop>
+            <source src="Drone Test.mp4" type="video/mp4">
+            Your browser does not support the video tag.
+            </video>
+        </div>
+
+    </section>
+
+    <!-- CONTACT SECTION -->
+        <section class="contact">
+            <hr class="divider">
+            <div class="contact-content">
+                <h3>CONTACT</h3>
+                <p>Email: christian.jaggard@torontomu.ca</p>
+                <p>Phone: +1 236-457-2372</p>
+            <p>LinkedIn: <a href="https://www.linkedin.com/in/christian-jaggard" target="_blank">linkedin.com/in/christian-jaggard</a></p>
+        </div>
+    </section>
+
+    <script>
+    let lastScroll = 0;
+    const header = document.getElementById("scroll-header");
+
+    window.addEventListener("scroll", () => {
+        let currentScroll = window.pageYOffset;
+
+        if (currentScroll > lastScroll) {
+            // scrolling DOWN → hide header
+            header.classList.add("hide");
+        } else {
+            // scrolling UP → show header
+            header.classList.remove("hide");
+        }
+
+        lastScroll = currentScroll;
+    });
+    </script>
+
+</body>
+</html>

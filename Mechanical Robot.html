@@ -1,0 +1,143 @@
+<link rel="stylesheet" href="stylesrobot.css">
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Glider Design</title>
+    <link rel="stylesheet" href="stylesrobot.css">
+</head>
+
+<body>
+
+    <header id="scroll-header">
+        <nav class="nav-bar">
+            <!-- Right side: nav links -->
+            <div class="nav-links">
+                <a href="index.html">Home</a>
+
+                <div class="dropdown">
+                    <button class="dropbtn">Projects ▾</button>
+                    <div class="dropdown-content">
+                        <a href="Anti-Drone.html">Anti-Drone Technology</a>
+                        <a href="AAIA Project.html">AIAA Space Weather Mission</a>
+                        <a href="Glider Design.html">Glider Design Project</a>
+                        <a href="HRAA.html">Hybrid Rocket Analysis App</a>
+                        <a href="Jack Project.html">Aircraft Jack Project</a>
+                        <a href="Mechanical Robot.html">Mechanical Robot Project</a>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Left side: contact -->
+            <div class="nav-contact">
+                <a href="mailto:christian.jaggard@torontomu.ca">Email</a>
+                <a href="https://www.linkedin.com/in/christian-jaggard" target="_blank">LinkedIn</a>
+            </div>
+        </nav>
+    </header>
+
+    <!-- HERO SECTION -->
+    <header class="hero">
+        <div class="overlay"></div>
+        <h1>Mechanical Robot Project</h1>
+    </header>
+
+
+    <!-- ABOUT SECTION -->
+    <section class="about">
+        <div class="about-text">
+            <h3>Project Description</h3>
+            <p>
+                    In this group project, I worked with 3 other members with the goal 
+                    to design a 4 bar linkage walking robot. We used different ratios 
+                    of wooden lengths to find the best result that allows the robot 
+                    to walk straight with a fast pace. In this project we used the 
+                    software SOLIDWORKS to model the robot's parts as well as Linkage 
+                    Mechanism to model the movement of the linkages.
+            </p>
+        </div>
+
+    </section>
+
+    <!-- INFORMATION SECTION 1-->
+     <section class="info">
+        <div class="info-img">
+            <img src="images/Robot Iteration 1.jpg" alt="Robot Iteration 1">
+        </div>
+        <div class="info-text">
+            <p>
+                In our first iteration we wanted to have the two front legs move the 
+                whole robot while the back two legs drag behind. After testing out 
+                this design we realized that the legs were not the right size and 
+                that it would never stay upright. We also found that we can't have 
+                any dragging parts so we began thinking of a new design.
+            </p>
+        </div>
+    </section>
+
+    <!-- INFORMATION SECTION 2-->
+     <section class="info2">
+        <div class="info2-text">
+            <p>
+                With our second iteration, we used the similar mechanism to the 
+                previous design but added two other legs simulating a walking motion. 
+                With the design finished we then created a CAD drawing of the parts 
+                which we used in the laser cutter allowing for accurate and precise 
+                cuts. Once everything was cut out we then assembled all the pieces to 
+                finish the model (as seen in the image at the top). 
+            </p>
+        </div>
+        <div class="info2-img">
+            <img src="images/Robot CAD.png" alt="Robot CAD">
+        </div>
+    </section>
+
+    <!-- INFORMATION SECTION 4-->
+     <section class="info4">
+        <div class="info4-text">
+            <p>
+                After the design was finished we brought it to the competition. 
+                Once there, we tested out the completed mechanism. The robot was 
+                continually catching on itself, likely due to the difference in 
+                length in the drive shaft arm. When it was our time to compete our 
+                robot didn't end up moving. Although our design in the end failed 
+                we learned a lot about team work and determination to not give up. 
+                With the first design a complete fail we recovered ourselves quickly 
+                to produce a model that can meet the requirements to give ourselves 
+                a chance in the competition.
+            </p>
+        </div>
+    </section>
+
+    <!-- CONTACT SECTION -->
+        <section class="contact">
+            <hr class="divider">
+            <div class="contact-content">
+                <h3>CONTACT</h3>
+                <p>Email: christian.jaggard@torontomu.ca</p>
+                <p>Phone: +1 236-457-2372</p>
+            <p>LinkedIn: <a href="https://www.linkedin.com/in/christian-jaggard" target="_blank">linkedin.com/in/christian-jaggard</a></p>
+        </div>
+    </section>
+
+    <script>
+    let lastScroll = 0;
+    const header = document.getElementById("scroll-header");
+
+    window.addEventListener("scroll", () => {
+        let currentScroll = window.pageYOffset;
+
+        if (currentScroll > lastScroll) {
+            // scrolling DOWN → hide header
+            header.classList.add("hide");
+        } else {
+            // scrolling UP → show header
+            header.classList.remove("hide");
+        }
+
+        lastScroll = currentScroll;
+    });
+    </script>
+
+</body>
+</html>

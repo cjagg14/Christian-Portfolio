@@ -1,0 +1,130 @@
+<link rel="stylesheet" href="styleAAIA.css">
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>AAIA Project</title>
+    <link rel="stylesheet" href="styleAAIA.css">
+</head>
+
+<body>
+
+        <header id="scroll-header">
+        <nav class="nav-bar">
+            <!-- Right side: nav links -->
+            <div class="nav-links">
+                <a href="index.html">Home</a>
+
+                <div class="dropdown">
+                    <button class="dropbtn">Projects ▾</button>
+                    <div class="dropdown-content">
+                        <a href="Anti-Drone.html">Anti-Drone Technology</a>
+                        <a href="AAIA Project.html">AIAA Space Weather Mission</a>
+                        <a href="Glider Design.html">Glider Design Project</a>
+                        <a href="HRAA.html">Hybrid Rocket Analysis App</a>
+                        <a href="Jack Project.html">Aircraft Jack Project</a>
+                        <a href="Mechanical Robot.html">Mechanical Robot Project</a>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Left side: contact -->
+            <div class="nav-contact">
+                <a href="mailto:christian.jaggard@torontomu.ca">Email</a>
+                <a href="https://www.linkedin.com/in/christian-jaggard" target="_blank">LinkedIn</a>
+            </div>
+        </nav>
+    </header>
+
+    <!-- HERO SECTION -->
+    <header class="hero">
+        <div class="overlay"></div>
+        <h1>AAIA Project</h1>
+    </header>
+
+
+    <!-- ABOUT SECTION -->
+    <section class="about">
+        <div class="about-text">
+            <h3>Project Description</h3>
+            <p>
+                    Cerberus is a mission concept developed by our team based on the 2025-2026 AIAA Undergraduate 
+                Team Space Design Competition challenge, but it is not an official submission to the competition. 
+                Instead, we are using the challenge framework as a foundation to design a realistic, forward-looking 
+                space mission that explores heliophysics, space weather, and deep-space communication needs.
+
+                    The goal of Cerberus is to help scientists and future explorers better understand how the Sun behaves, 
+                how space weather evolves, and how these phenomena affect missions beyond Earth. Our concept includes a 
+                suite of scientific instruments dedicated to monitoring solar activity and the local cosmic environment.
+
+                    A major objective of the mission is to improve safety for future crewed missions to the Moon and Mars. 
+                Cerberus is designed to provide early warnings of hazardous space-weather events, delivering critical information 
+                to astronauts during deep-space transit and while operating on the surfaces of Mars or the Moon.
+
+                    In addition to its science role, the mission provides near-continuous communication coverage between 
+                Earth and Mars during the specified mission window (January 1, 2036 - December 31, 2049). By maintaining 
+                line-of-sight relay capability, Cerberus would support reliable communication links for both crewed and 
+                robotic missions throughout the inner solar system.
+
+                    Overall, the Cerberus mission concept demonstrates how a satellite network can simultaneously advance 
+                scientific understanding and strengthen the safety and communication infrastructure required for the future 
+                of human space exploration.
+            </p>
+        </div>
+
+    </section>
+
+    <!-- INFORMATION SECTION -->
+     <section class="info">
+        <div class="info-vid">
+            <video width="100%" height="auto" autoplay muted loop>
+            <source src="Satellite Trip.mp4" type="video/mp4">
+            Your browser does not support the video tag.
+            </video>
+        </div>
+        <div class="info-text">
+            <p>
+                As part of the project, I was responsible for using ANSYS STK to design 
+                and analyze the orbital trajectories for the three Cerberus satellites. 
+                These spacecraft are planned to operate at key gravitationally stable locations: 
+                Earth-Sun L4, Earth-Sun L5, and Mars-Sun L5. My work included determining 
+                their transfer paths to these Lagrange points, calculating the ΔV required 
+                to reach and maintain their positions, and ensuring they provide continuous 
+                communication coverage. I also created a demonstration video of the full mission
+                 trajectory, which is showcased to the left as well as the ΔV required shown below.
+            </p>
+        </div>
+    </section>
+
+    <!-- CONTACT SECTION -->
+        <section class="contact">
+            <hr class="divider">
+            <div class="contact-content">
+                <h3>CONTACT</h3>
+                <p>Email: christian.jaggard@torontomu.ca</p>
+                <p>Phone: +1 236-457-2372</p>
+            <p>LinkedIn: <a href="https://www.linkedin.com/in/christian-jaggard" target="_blank">linkedin.com/in/christian-jaggard</a></p>
+        </div>
+    </section>
+
+    <script>
+    let lastScroll = 0;
+    const header = document.getElementById("scroll-header");
+
+    window.addEventListener("scroll", () => {
+        let currentScroll = window.pageYOffset;
+
+        if (currentScroll > lastScroll) {
+            // scrolling DOWN → hide header
+            header.classList.add("hide");
+        } else {
+            // scrolling UP → show header
+            header.classList.remove("hide");
+        }
+
+        lastScroll = currentScroll;
+    });
+    </script>
+
+</body>
+</html>
