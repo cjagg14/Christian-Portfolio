@@ -123,10 +123,12 @@ body {
 /* ===================== HERO SECTION ===================== */
 
 .hero {
-    height: 80vh;
+    height: 100vh;
     background-image: url('images/Glider Render.png');
     background-size: cover;
     background-position: center;
+    background-attachment: fixed; /* <— enables parallax */
+    background-repeat: no-repeat;
     position: relative;
     text-align: center;
     display: flex;
@@ -151,15 +153,6 @@ body {
     margin: 0;
     z-index: 2;
     font-family: 'Times New Roman', Times, serif;
-}
-
-.overlay {
-    position: absolute;
-    top: 0; 
-    left: 0;
-    right: 0;
-    bottom: 0;
-    background: rgba(0,0,0,0.45);
 }
 
 /* ========================================================= */
@@ -289,7 +282,6 @@ body {
     width: 70%;
     height: auto;
     margin-top: 100px;
-
 }
 
 /* ===================== CONTACT SECTION ===================== */
@@ -346,6 +338,24 @@ body {
         margin-right: 10px;
     }
 
+    .hero {
+        position: relative;
+        overflow: hidden;
+        background: none !important;
+    }
+
+    .parallax-bg {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100vh;
+        background-image: url('images/Glider Render.png');
+        background-size: cover;
+        background-position: center;
+        z-index: -1;
+    }
+    
     /* Dropdown menu */
     .dropdown {
         position: relative;
@@ -380,6 +390,9 @@ body {
         gap: 30px;
         align-items: center;
         text-align: center; /* center the text */
+        background-color: black; /* solid black background */
+        margin-top: -2px;
+        margin-bottom: -62px;
     }
     .about-text {
         width: 100%;
@@ -407,6 +420,8 @@ body {
         grid-template-columns: 1fr !important;
         gap: 40px !important;
         justify-items: center;
+        background-color: black; /* solid black background */
+        margin-bottom: -81px;
     }
 
     .info-img img {
@@ -434,6 +449,8 @@ body {
         grid-template-columns: 1fr !important;
         gap: 40px !important;
         justify-items: center;
+        background-color: black; /* solid black background */
+        margin-bottom: -2px;
     }
 
     .info2-img img {
@@ -448,28 +465,47 @@ body {
         font-size: 34px;
     }
 
+    .info3 {
+        background-color: black; /* solid black background */
+        margin-bottom: -82px;
+    }
+
     .info3-img img {
         width: 90%;
         margin-bottom: 20px;
+        background-color: black; /* solid black background */
     }
+
+
 
     .info4 {
         display: grid !important;
         grid-template-columns: 1fr !important;
         gap: 40px !important;
         justify-items: center;
+        background-color: black; /* solid black background */
+        margin-bottom: 0px;
     }
 
     .info4-text {
         margin-top: 30px;
         width: 78%;
-        margin-bottom: 10px;
+        margin-bottom: 0px;
         font-size: 34px;
+    }
+
+    .info5 {
+        background-color: black; /* solid black background */
+        margin-top: -100px;
     }
 
     .info5-vid video {
         width: 90%;
-        margin-bottom: 20px;
+        margin-bottom: 0px;
+    }
+
+    .contact {
+        background-color: black; /* solid black background */
     }
 
     .contact-content h3 {

@@ -37,17 +37,22 @@
     </header>
 
 
-
     <!-- HERO SECTION -->
     <header class="hero">
-        <div class="overlay"></div>
+        <!-- Parallax background (only one, inside hero) -->
+        <div class="parallax-bg"></div>
+
+        <!-- Hero text -->
         <h1>Portfolio</h1>
         <h2>Christian Jaggard</h2>
+
+        <!-- Corner credit -->
         <div class="corner-container">
-        <h3>NASA</h3>
-        <p>Image Provided From NASA</p>
+            <h3>NASA</h3>
+            <p>Image Provided From NASA</p>
         </div>
     </header>
+
 
 
     <!-- ABOUT SECTION -->
@@ -133,27 +138,35 @@
                 <h3>CONTACT</h3>
                 <p>Email: christian.jaggard@torontomu.ca</p>
                 <p>Phone: +1 236-457-2372</p>
-            <p>LinkedIn: <a href="https://www.linkedin.com/in/christian-jaggard" target="_blank">linkedin.com/in/christian-jaggard</a></p>
-        </div>
-    </section>
+                <p>LinkedIn: <a href="https://www.linkedin.com/in/christian-jaggard" target="_blank">linkedin.com/in/christian-jaggard</a></p>
+            </div>
+        </section>
 
     <script>
-    let lastScroll = 0;
-    const header = document.getElementById("scroll-header");
 
-    window.addEventListener("scroll", () => {
-        let currentScroll = window.pageYOffset;
+        let lastScroll = 0;
+        const header = document.getElementById("scroll-header");
 
-        if (currentScroll > lastScroll) {
-            // scrolling DOWN → hide header
-            header.classList.add("hide");
-        } else {
-            // scrolling UP → show header
-            header.classList.remove("hide");
-        }
+        window.addEventListener("scroll", () => {
+            let currentScroll = window.pageYOffset;
 
-        lastScroll = currentScroll;
-    });
+            // Always show when near the top (adjust 150px as needed)
+            if (currentScroll < 150) {
+                header.classList.remove("hide");
+                return;
+            }
+
+            if (currentScroll > lastScroll) {
+                // scrolling DOWN → hide header
+                header.classList.add("hide");
+            } else {
+                // scrolling UP → show header
+                header.classList.remove("hide");
+            }
+
+            lastScroll = currentScroll;
+        });
+
     </script>
 
 </body>

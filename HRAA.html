@@ -124,6 +124,12 @@
     window.addEventListener("scroll", () => {
         let currentScroll = window.pageYOffset;
 
+        // Always show when near the top (adjust 150px as needed)
+        if (currentScroll < 150) {
+            header.classList.remove("hide");
+            return;
+        }
+
         if (currentScroll > lastScroll) {
             // scrolling DOWN → hide header
             header.classList.add("hide");

@@ -38,7 +38,7 @@
 
     <!-- HERO SECTION -->
     <header class="hero">
-        <div class="overlay"></div>
+        <div class="parallax-bg"></div>
         <h1>Anti-Drone Project</h1>
     </header>
 
@@ -84,6 +84,12 @@
 
     window.addEventListener("scroll", () => {
         let currentScroll = window.pageYOffset;
+
+        // Always show when near the top (adjust 150px as needed)
+        if (currentScroll < 150) {
+            header.classList.remove("hide");
+            return;
+        }
 
         if (currentScroll > lastScroll) {
             // scrolling DOWN → hide header

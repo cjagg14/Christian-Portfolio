@@ -38,7 +38,7 @@
 
     <!-- HERO SECTION -->
     <header class="hero">
-        <div class="overlay"></div>
+        <div class="parallax-bg"></div>
         <h1>Glider Design Project</h1>
     </header>
 
@@ -116,7 +116,7 @@
     <!-- INFORMATION SECTION 5-->
      <section class="info5">
         <div class="info5-vid">
-            <video autoplay muted loop>
+            <video autoplay muted loop playsinline controls>
             <source src="Glider Throw.mp4" type="video/mp4">
             Your browser does not support the video tag.
             </video>
@@ -140,6 +140,12 @@
 
     window.addEventListener("scroll", () => {
         let currentScroll = window.pageYOffset;
+
+        // Always show when near the top (adjust 150px as needed)
+        if (currentScroll < 150) {
+            header.classList.remove("hide");
+            return;
+        }
 
         if (currentScroll > lastScroll) {
             // scrolling DOWN → hide header

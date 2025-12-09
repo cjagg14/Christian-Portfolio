@@ -38,8 +38,9 @@
 
     <!-- HERO SECTION -->
     <header class="hero">
-        <div class="overlay"></div>
+        <div class="parallax-bg"></div>
         <h1>AAIA Project</h1>
+        <div class="overlay"></div>
     </header>
 
 
@@ -77,7 +78,7 @@
     <!-- INFORMATION SECTION -->
      <section class="info">
         <div class="info-vid">
-            <video width="100%" height="auto" autoplay muted loop>
+            <video autoplay muted loop playsinline controls width="100%" height="auto">
             <source src="Satellite Trip.mp4" type="video/mp4">
             Your browser does not support the video tag.
             </video>
@@ -113,6 +114,12 @@
 
     window.addEventListener("scroll", () => {
         let currentScroll = window.pageYOffset;
+
+        // Always show when near the top (adjust 150px as needed)
+        if (currentScroll < 150) {
+            header.classList.remove("hide");
+            return;
+        }
 
         if (currentScroll > lastScroll) {
             // scrolling DOWN → hide header
