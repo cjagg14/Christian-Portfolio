@@ -120,6 +120,27 @@ body {
     display: block;
 }
 
+.nav-links a, .dropbtn {
+    display: flex;          /* makes icon + text a flex container */
+    align-items: center;    /* vertically centers text and icon */
+    height: 100%;           /* ensures full height of nav-bar */
+}
+
+/* Desktop version */
+.nav-contact a img {
+    width: 35px;   /* smaller desktop size */
+    height: 35px;
+    margin-right: 6px;
+    vertical-align: middle;
+}
+
+.nav-contact a svg {
+    width: 25px;   /* smaller desktop size for SVG email */
+    height: 25px;
+    margin-right: 10px;
+    vertical-align: middle;
+}
+
 /* ===================== HERO SECTION ===================== */
 
 .hero {
@@ -328,5 +349,19 @@ body {
     .contact {
         background-color: black; /* solid black background */
         margin-top: -1px;
+    }
+
+    /* Make email and LinkedIn icons bigger on mobile */
+    .nav-contact a img{       /* Email SVG */
+        width: 60px;           /* increase width */
+        height: 60px;          /* increase height */
+        margin-right: 10px;    /* optional spacing */
+        vertical-align: middle;
+    }
+    .nav-contact a svg {       /* Email SVG */
+        width: 40px;           /* increase width */
+        height: 40px;          /* increase height */
+        margin-right: 10px;    /* optional spacing */
+        vertical-align: middle;
     }
 }

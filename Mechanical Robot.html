@@ -30,11 +30,20 @@
             
             <!-- Left side: contact -->
             <div class="nav-contact">
-                <a href="mailto:christian.jaggard@torontomu.ca">Email</a>
-                <a href="https://www.linkedin.com/in/christian-jaggard" target="_blank">LinkedIn</a>
+                <a href="mailto:christian.jaggard@torontomu.ca">
+                    <!-- Email Icon SVG -->
+                    <svg xmlns="http://www.w3.org/2000/svg" fill="white" viewBox="0 0 24 24" style="vertical-align: middle; margin-right: 5px;">
+                        <path d="M12 13.065l-11-7.065v14h22v-14l-11 7.065zm0-2.065l11-7h-22l11 7z"/>
+                    </svg>
+                    Email
+                </a>
+                <a href="https://www.linkedin.com/in/christian-jaggard" target="_blank">
+                    <img src="images/Logo.png" alt="LinkedIn" style="vertical-align: middle; margin-right:5px;">
+                    LinkedIn
+                </a>
             </div>
         </nav>
-    </header>
+        </header>
 
     <!-- HERO SECTION -->
     <header class="hero">
@@ -121,28 +130,54 @@
     </section>
 
     <script>
-    let lastScroll = 0;
-    const header = document.getElementById("scroll-header");
 
-    window.addEventListener("scroll", () => {
-        let currentScroll = window.pageYOffset;
+        let lastScroll = 0;
+        const header = document.getElementById("scroll-header");
 
-        // Always show when near the top (adjust 150px as needed)
-        if (currentScroll < 150) {
-            header.classList.remove("hide");
-            return;
-        }
+        window.addEventListener("scroll", () => {
+            let currentScroll = window.pageYOffset;
 
-        if (currentScroll > lastScroll) {
-            // scrolling DOWN → hide header
-            header.classList.add("hide");
-        } else {
-            // scrolling UP → show header
-            header.classList.remove("hide");
-        }
+            // Always show when near the top
+            if (currentScroll < 150) {
+                header.classList.remove("hide");
+                return;
+            }
 
-        lastScroll = currentScroll;
-    });
+            if (currentScroll > lastScroll) {
+                // scrolling DOWN → hide header
+                header.classList.add("hide");
+            } else {
+                // scrolling UP → show header
+                header.classList.remove("hide");
+            }
+
+            lastScroll = currentScroll;
+        });
+
+        // ====== MOBILE-FRIENDLY DROPDOWN ======
+        document.addEventListener("DOMContentLoaded", function() {
+            const dropdowns = document.querySelectorAll(".dropdown");
+
+            dropdowns.forEach(dropdown => {
+                const button = dropdown.querySelector(".dropbtn");
+                const menu = dropdown.querySelector(".dropdown-content");
+
+                // Toggle dropdown on button click
+                button.addEventListener("click", function(e) {
+                    e.stopPropagation(); // prevent triggering document click
+                    menu.style.display = (menu.style.display === "block") ? "none" : "block";
+                });
+            });
+
+            // Close all dropdowns when clicking outside
+            document.addEventListener("click", function() {
+                dropdowns.forEach(dropdown => {
+                    const menu = dropdown.querySelector(".dropdown-content");
+                    menu.style.display = "none";
+                });
+            });
+        });
+
     </script>
 
 </body>
