@@ -65,9 +65,7 @@ a {
     left: 0;
     right: 0;
     height: 70px;
-    background: rgba(10, 10, 15, 0.8);
-    backdrop-filter: blur(20px);
-    -webkit-backdrop-filter: blur(20px);
+    background: rgba(0, 0, 0, 0.95);
     border-bottom: 1px solid var(--color-border);
     display: flex;
     align-items: center;
@@ -150,9 +148,7 @@ a {
     top: 100%;
     left: 50%;
     transform: translateX(-50%);
-    background: rgba(18, 18, 26, 0.98);
-    backdrop-filter: blur(20px);
-    -webkit-backdrop-filter: blur(20px);
+    background: rgba(0, 0, 0, 0.98);
     min-width: 280px;
     border: 1px solid var(--color-border);
     border-radius: 12px;
@@ -255,7 +251,7 @@ a {
     height: 100%;
     background-size: cover;
     background-position: center;
-    background-attachment: fixed;
+    background-attachment: scroll;
     z-index: 0;
 }
 
@@ -462,13 +458,12 @@ a {
     border-radius: 8px;
     background: var(--color-bg-elevated);
     border: 1px solid var(--color-border);
-    transition: transform 0.4s var(--transition-smooth), border-color 0.4s var(--transition-smooth), box-shadow 0.4s var(--transition-smooth);
+    transition: transform 0.3s ease, border-color 0.3s ease;
 }
 
 .project-card:hover {
     transform: translateY(-8px);
     border-color: var(--color-border-hover);
-    box-shadow: var(--shadow-glow);
 }
 
 .project-card a {
@@ -479,7 +474,7 @@ a {
     width: 100%;
     aspect-ratio: 4/3;
     object-fit: cover;
-    transition: transform 0.6s var(--transition-smooth);
+    transition: transform 0.3s ease;
 }
 
 .project-card:hover img {
@@ -630,8 +625,8 @@ a {
 /* ===================== ANIMATIONS ===================== */
 .fade-in {
     opacity: 0;
-    transform: translateY(30px);
-    transition: opacity 0.8s var(--transition-smooth), transform 0.8s var(--transition-smooth);
+    transform: translateY(20px);
+    transition: opacity 0.5s ease, transform 0.5s ease;
 }
 
 .fade-in.visible {
@@ -806,7 +801,7 @@ a {
     align-items: center;
     justify-content: center;
     z-index: 99999;
-    transition: opacity 0.5s var(--transition-smooth), visibility 0.5s;
+    transition: opacity 0.3s ease, visibility 0.3s;
 }
 
 .page-loader.hidden {
@@ -825,10 +820,4 @@ a {
 
 @keyframes spin {
     to { transform: rotate(360deg); }
-}
-
-@supports (-webkit-touch-callout: none) {
-    .parallax-bg {
-        background-attachment: scroll;
-    }
 }
