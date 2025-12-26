@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AIAA Space Weather Mission — Christian Jaggard</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@300;400;500&family=Source+Sans+3:wght@300;400;500;600&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="page-loader">
+        <div class="loader-ring"></div>
+    </div>
+
+    <header id="scroll-header">
+        <nav class="nav-bar">
+            <div class="nav-links">
+                <a href="index.html">Home</a>
+                <div class="dropdown">
+                    <button class="dropbtn">Projects ▾</button>
+                    <div class="dropdown-content">
+                        <a href="Anti-Drone.html">Anti-Drone Technology</a>
+                        <a href="AAIA-Project.html">AIAA Space Weather Mission</a>
+                        <a href="Glider-Design.html">Glider Design Project</a>
+                        <a href="HRAA.html">Hybrid Rocket Analysis App</a>
+                        <a href="Jack-Project.html">Aircraft Jack Project</a>
+                        <a href="Mechanical-Robot.html">Mechanical Robot Project</a>
+                    </div>
+                </div>
+            </div>
+            <div class="nav-contact">
+                <a href="mailto:christian.jaggard@torontomu.ca">
+                    <svg xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 24 24">
+                        <path d="M20 4H4c-1.1 0-2 .9-2 2v12c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z"/>
+                    </svg>
+                    <span>Email</span>
+                </a>
+                <a href="https://www.linkedin.com/in/christian-jaggard" target="_blank" rel="noopener">
+                    <svg xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 24 24">
+                        <path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z"/>
+                    </svg>
+                    <span>LinkedIn</span>
+                </a>
+            </div>
+        </nav>
+    </header>
+
+    <section class="hero hero-aiaa">
+        <div class="parallax-bg"></div>
+        <h1>AIAA Space Weather Mission</h1>
+    </section>
+
+    <section class="about" style="flex-direction: column; text-align: center; max-width: 900px;">
+        <div class="about-text fade-in" style="max-width: 100%;">
+            <h3>Project Description</h3>
+            <p>Cerberus is a mission concept developed by our team based on the 2025-2026 AIAA Undergraduate Team Space Design Competition challenge, but it is not an official submission to the competition. Instead, we are using the challenge framework as a foundation to design a realistic, forward-looking space mission that explores heliophysics, space weather, and deep-space communication needs.</p>
+            <p>The goal of Cerberus is to help scientists and future explorers better understand how the Sun behaves, how space weather evolves, and how these phenomena affect missions beyond Earth. Our concept includes a suite of scientific instruments dedicated to monitoring solar activity and the local cosmic environment.</p>
+            <p>A major objective of the mission is to improve safety for future crewed missions to the Moon and Mars. Cerberus is designed to provide early warnings of hazardous space-weather events, delivering critical information to astronauts during deep-space transit and while operating on the surfaces of Mars or the Moon.</p>
+            <p>In addition to its science role, the mission provides near-continuous communication coverage between Earth and Mars during the specified mission window (January 1, 2036 - December 31, 2049). By maintaining line-of-sight relay capability, Cerberus would support reliable communication links for both crewed and robotic missions throughout the inner solar system.</p>
+        </div>
+    </section>
+
+    <section class="info-section">
+        <div class="info-media fade-in">
+            <video autoplay muted loop playsinline controls width="100%" height="auto">
+                <source src="Satellite Trip.mp4" type="video/mp4">
+                Your browser does not support the video tag.
+            </video>
+        </div>
+        <div class="info-text fade-in stagger-1">
+            <p>As part of the project, I was responsible for using ANSYS STK to design and analyze the orbital trajectories for the three Cerberus satellites. These spacecraft are planned to operate at key gravitationally stable locations: Earth-Sun L4, Earth-Sun L5, and Mars-Sun L5.</p>
+            <p>My work included determining their transfer paths to these Lagrange points, calculating the ΔV required to reach and maintain their positions, and ensuring they provide continuous communication coverage. I also created a demonstration video of the full mission trajectory, which is showcased here.</p>
+        </div>
+    </section>
+
+    <section class="contact">
+        <hr class="divider">
+        <div class="contact-content fade-in">
+            <h3>Contact</h3>
+            <p>Email: <a href="mailto:christian.jaggard@torontomu.ca">christian.jaggard@torontomu.ca</a></p>
+            <p>Phone: +1 236-457-2372</p>
+            <p>LinkedIn: <a href="https://www.linkedin.com/in/christian-jaggard" target="_blank" rel="noopener">linkedin.com/in/christian-jaggard</a></p>
+        </div>
+    </section>
+
+    <script>
+        window.addEventListener('load', function() {
+            document.querySelector('.page-loader').classList.add('hidden');
+        });
+
+        var lastScroll = 0;
+        var header = document.getElementById('scroll-header');
+
+        window.addEventListener('scroll', function() {
+            var currentScroll = window.pageYOffset;
+            if (currentScroll > 50) {
+                header.classList.add('scrolled');
+            } else {
+                header.classList.remove('scrolled');
+            }
+            if (currentScroll < 100) {
+                header.classList.remove('hide');
+                lastScroll = currentScroll;
+                return;
+            }
+            if (currentScroll > lastScroll && currentScroll > 200) {
+                header.classList.add('hide');
+            } else {
+                header.classList.remove('hide');
+            }
+            lastScroll = currentScroll;
+        });
+
+        document.addEventListener('DOMContentLoaded', function() {
+            var dropdowns = document.querySelectorAll('.dropdown');
+            dropdowns.forEach(function(dropdown) {
+                var button = dropdown.querySelector('.dropbtn');
+                var menu = dropdown.querySelector('.dropdown-content');
+                button.addEventListener('click', function(e) {
+                    e.preventDefault();
+                    e.stopPropagation();
+                    document.querySelectorAll('.dropdown-content').forEach(function(m) {
+                        if (m !== menu) {
+                            m.classList.remove('show');
+                        }
+                    });
+                    menu.classList.toggle('show');
+                });
+            });
+            document.addEventListener('click', function(e) {
+                if (!e.target.closest('.dropdown')) {
+                    document.querySelectorAll('.dropdown-content').forEach(function(m) {
+                        m.classList.remove('show');
+                    });
+                }
+            });
+            document.addEventListener('touchstart', function(e) {
+                if (!e.target.closest('.dropdown')) {
+                    document.querySelectorAll('.dropdown-content').forEach(function(m) {
+                        m.classList.remove('show');
+                    });
+                }
+            });
+        });
+
+        var observer = new IntersectionObserver(function(entries) {
+            entries.forEach(function(entry) {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('visible');
+                    observer.unobserve(entry.target);
+                }
+            });
+        }, { threshold: 0.1 });
+
+        document.querySelectorAll('.fade-in').forEach(function(el) {
+            observer.observe(el);
+        });
+    </script>
+</body>
+</html>
