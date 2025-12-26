@@ -1,142 +1,156 @@
-<link rel="stylesheet" href="stylesantidrone.css">
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Anti-Drone Project</title>
-    <link rel="stylesheet" href="stylesantidrone.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Anti-Drone Technology — Christian Jaggard</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@300;400;500&family=Source+Sans+3:wght@300;400;500;600&display=swap" rel="stylesheet">
 </head>
-
 <body>
+    <div class="page-loader">
+        <div class="loader-ring"></div>
+    </div>
 
-        <header id="scroll-header">
+    <header id="scroll-header">
         <nav class="nav-bar">
-            <!-- Right side: nav links -->
             <div class="nav-links">
                 <a href="index.html">Home</a>
-
                 <div class="dropdown">
                     <button class="dropbtn">Projects ▾</button>
                     <div class="dropdown-content">
                         <a href="Anti-Drone.html">Anti-Drone Technology</a>
-                        <a href="AAIA Project.html">AIAA Space Weather Mission</a>
-                        <a href="Glider Design.html">Glider Design Project</a>
+                        <a href="AAIA-Project.html">AIAA Space Weather Mission</a>
+                        <a href="Glider-Design.html">Glider Design Project</a>
                         <a href="HRAA.html">Hybrid Rocket Analysis App</a>
-                        <a href="Jack Project.html">Aircraft Jack Project</a>
-                        <a href="Mechanical Robot.html">Mechanical Robot Project</a>
+                        <a href="Jack-Project.html">Aircraft Jack Project</a>
+                        <a href="Mechanical-Robot.html">Mechanical Robot Project</a>
                     </div>
                 </div>
             </div>
-            
-            <!-- Left side: contact -->
             <div class="nav-contact">
                 <a href="mailto:christian.jaggard@torontomu.ca">
-                    <!-- Email Icon SVG -->
-                    <svg xmlns="http://www.w3.org/2000/svg" fill="white" viewBox="0 0 24 24" style="vertical-align: middle; margin-right: 5px;">
-                        <path d="M12 13.065l-11-7.065v14h22v-14l-11 7.065zm0-2.065l11-7h-22l11 7z"/>
+                    <svg xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 24 24">
+                        <path d="M20 4H4c-1.1 0-2 .9-2 2v12c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z"/>
                     </svg>
-                    Email
+                    <span>Email</span>
                 </a>
-                <a href="https://www.linkedin.com/in/christian-jaggard" target="_blank">
-                    <img src="images/Logo.png" alt="LinkedIn" style="vertical-align: middle; margin-right:5px;">
-                    LinkedIn
+                <a href="https://www.linkedin.com/in/christian-jaggard" target="_blank" rel="noopener">
+                    <svg xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 24 24">
+                        <path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z"/>
+                    </svg>
+                    <span>LinkedIn</span>
                 </a>
             </div>
         </nav>
-        </header>
-
-    <!-- HERO SECTION -->
-    <header class="hero">
-        <div class="parallax-bg"></div>
-        <h1>Anti-Drone Project</h1>
     </header>
 
-
-    <!-- ABOUT SECTION -->
-    <section class="about">
-        <div class="about-text">
-            <h3>Project Description</h3>
-            <p>
-                In my fourth year of study, I undertook a project that integrated 
-                the use of an Arduino kit alongside a 3D printer to engineer a specialized 
-                device. The primary objective of this endeavor was to develop an attachment 
-                for a drone, designed specifically to intercept and capture drones operating 
-                within restricted airspace. This project not only honed my technical skills in 
-                programming and 3D modeling but also deepened my understanding in drone technology 
-                and its applications in maintaining security. Shown below is a video of how the device works:
-            </p>
-        </div>
-
-        <div class="about-img">
-            <video width="100%" height="auto" autoplay muted loop>
-            <source src="Drone Test.mp4" type="video/mp4">
-            Your browser does not support the video tag.
-            </video>
-        </div>
-
+    <section class="hero hero-antidrone">
+        <div class="parallax-bg"></div>
+        <h1>Anti-Drone Technology</h1>
     </section>
 
-    <!-- CONTACT SECTION -->
-        <section class="contact">
-            <hr class="divider">
-            <div class="contact-content">
-                <h3>CONTACT</h3>
-                <p>Email: christian.jaggard@torontomu.ca</p>
-                <p>Phone: +1 236-457-2372</p>
-            <p>LinkedIn: <a href="https://www.linkedin.com/in/christian-jaggard" target="_blank">linkedin.com/in/christian-jaggard</a></p>
+    <section class="about" style="flex-direction: column; text-align: center; max-width: 1000px;">
+        <div class="about-text fade-in" style="max-width: 100%;">
+            <h3>Project Description</h3>
+            <p>In my fourth year of study, I undertook a project that integrated the use of an Arduino kit alongside a 3D printer to engineer a specialized device. The primary objective of this endeavor was to develop an attachment for a drone, designed specifically to intercept and capture drones operating within restricted airspace.</p>
+            <p>This project not only honed my technical skills in programming and 3D modeling but also deepened my understanding in drone technology and its applications in maintaining security. Shown below is a video of how the device works:</p>
+        </div>
+    </section>
+
+    <section class="info-section full-width centered">
+        <div class="info-media fade-in" style="max-width: 800px;">
+            <video width="100%" height="auto" autoplay muted loop playsinline controls>
+                <source src="Drone Test.mp4" type="video/mp4">
+                Your browser does not support the video tag.
+            </video>
+        </div>
+    </section>
+
+    <section class="contact">
+        <hr class="divider">
+        <div class="contact-content fade-in">
+            <h3>Contact</h3>
+            <p>Email: <a href="mailto:christian.jaggard@torontomu.ca">christian.jaggard@torontomu.ca</a></p>
+            <p>Phone: +1 236-457-2372</p>
+            <p>LinkedIn: <a href="https://www.linkedin.com/in/christian-jaggard" target="_blank" rel="noopener">linkedin.com/in/christian-jaggard</a></p>
         </div>
     </section>
 
     <script>
+        window.addEventListener('load', function() {
+            document.querySelector('.page-loader').classList.add('hidden');
+        });
 
-        let lastScroll = 0;
-        const header = document.getElementById("scroll-header");
+        var lastScroll = 0;
+        var header = document.getElementById('scroll-header');
 
-        window.addEventListener("scroll", () => {
-            let currentScroll = window.pageYOffset;
-
-            // Always show when near the top
-            if (currentScroll < 150) {
-                header.classList.remove("hide");
+        window.addEventListener('scroll', function() {
+            var currentScroll = window.pageYOffset;
+            if (currentScroll > 50) {
+                header.classList.add('scrolled');
+            } else {
+                header.classList.remove('scrolled');
+            }
+            if (currentScroll < 100) {
+                header.classList.remove('hide');
+                lastScroll = currentScroll;
                 return;
             }
-
-            if (currentScroll > lastScroll) {
-                // scrolling DOWN → hide header
-                header.classList.add("hide");
+            if (currentScroll > lastScroll && currentScroll > 200) {
+                header.classList.add('hide');
             } else {
-                // scrolling UP → show header
-                header.classList.remove("hide");
+                header.classList.remove('hide');
             }
-
             lastScroll = currentScroll;
         });
 
-        // ====== MOBILE-FRIENDLY DROPDOWN ======
-        document.addEventListener("DOMContentLoaded", function() {
-            const dropdowns = document.querySelectorAll(".dropdown");
-
-            dropdowns.forEach(dropdown => {
-                const button = dropdown.querySelector(".dropbtn");
-                const menu = dropdown.querySelector(".dropdown-content");
-
-                // Toggle dropdown on button click
-                button.addEventListener("click", function(e) {
-                    e.stopPropagation(); // prevent triggering document click
-                    menu.style.display = (menu.style.display === "block") ? "none" : "block";
+        document.addEventListener('DOMContentLoaded', function() {
+            var dropdowns = document.querySelectorAll('.dropdown');
+            dropdowns.forEach(function(dropdown) {
+                var button = dropdown.querySelector('.dropbtn');
+                var menu = dropdown.querySelector('.dropdown-content');
+                button.addEventListener('click', function(e) {
+                    e.preventDefault();
+                    e.stopPropagation();
+                    document.querySelectorAll('.dropdown-content').forEach(function(m) {
+                        if (m !== menu) {
+                            m.classList.remove('show');
+                        }
+                    });
+                    menu.classList.toggle('show');
                 });
             });
-
-            // Close all dropdowns when clicking outside
-            document.addEventListener("click", function() {
-                dropdowns.forEach(dropdown => {
-                    const menu = dropdown.querySelector(".dropdown-content");
-                    menu.style.display = "none";
-                });
+            document.addEventListener('click', function(e) {
+                if (!e.target.closest('.dropdown')) {
+                    document.querySelectorAll('.dropdown-content').forEach(function(m) {
+                        m.classList.remove('show');
+                    });
+                }
+            });
+            document.addEventListener('touchstart', function(e) {
+                if (!e.target.closest('.dropdown')) {
+                    document.querySelectorAll('.dropdown-content').forEach(function(m) {
+                        m.classList.remove('show');
+                    });
+                }
             });
         });
 
-    </script>
+        var observer = new IntersectionObserver(function(entries) {
+            entries.forEach(function(entry) {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('visible');
+                    observer.unobserve(entry.target);
+                }
+            });
+        }, { threshold: 0.1 });
 
+        document.querySelectorAll('.fade-in').forEach(function(el) {
+            observer.observe(el);
+        });
+    </script>
 </body>
 </html>
