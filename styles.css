@@ -65,11 +65,15 @@ a {
     left: 0;
     right: 0;
     height: 70px;
-    background: rgba(0, 0, 0, 0.95);
+    background: rgba(10, 10, 15, 0.8);
+    backdrop-filter: blur(20px);
+    -webkit-backdrop-filter: blur(20px);
     border-bottom: 1px solid var(--color-border);
     display: flex;
     align-items: center;
     justify-content: center;
+    /* will-change tells the compositor to keep this on its own layer */
+    will-change: transform;
     transition: transform 0.4s var(--transition-smooth), background 0.3s var(--transition-smooth);
     z-index: 9999;
 }
@@ -148,7 +152,9 @@ a {
     top: 100%;
     left: 50%;
     transform: translateX(-50%);
-    background: rgba(0, 0, 0, 0.98);
+    background: rgba(18, 18, 26, 0.98);
+    backdrop-filter: blur(20px);
+    -webkit-backdrop-filter: blur(20px);
     min-width: 280px;
     border: 1px solid var(--color-border);
     border-radius: 12px;
@@ -232,6 +238,8 @@ a {
     justify-content: center;
     align-items: center;
     text-align: center;
+    /* Isolate hero into its own stacking context so parallax repaints don't bleed out */
+    isolation: isolate;
     overflow: hidden;
 }
 
@@ -241,6 +249,8 @@ a {
     inset: 0;
     background: linear-gradient(180deg, rgba(10, 10, 15, 0.3) 0%, rgba(10, 10, 15, 0.1) 40%, rgba(10, 10, 15, 0.6) 80%, var(--color-bg) 100%);
     z-index: 1;
+    /* Gradient overlay stays on its own layer, not repainted */
+    will-change: opacity;
 }
 
 .parallax-bg {
@@ -253,12 +263,6 @@ a {
     background-position: center;
     background-attachment: fixed;
     z-index: 0;
-}
-
-@supports (-webkit-touch-callout: none) {
-    .parallax-bg {
-        background-attachment: scroll;
-    }
 }
 
 .hero-home .parallax-bg { background-image: url('images/Space Image 2.jpg'); }
@@ -456,6 +460,8 @@ a {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
     gap: 40px;
+    /* layout containment: grid changes don't trigger reflow outside this box */
+    contain: layout style;
 }
 
 .project-card {
@@ -464,24 +470,40 @@ a {
     border-radius: 8px;
     background: var(--color-bg-elevated);
     border: 1px solid var(--color-border);
-    transition: transform 0.3s ease, border-color 0.3s ease;
+    /* paint containment: card repaints don't affect siblings */
+    contain: layout style paint;
+    /* No permanent will-change -- allocating 6 GPU layers at once was the lag source.
+       The browser promotes the layer automatically when the hover transform begins. */
+    transition: transform 0.4s var(--transition-smooth), border-color 0.4s var(--transition-smooth), box-shadow 0.4s var(--transition-smooth);
 }
 
 .project-card:hover {
     transform: translateY(-8px);
     border-color: var(--color-border-hover);
+    box-shadow: var(--shadow-glow);
+    /* Only hint the compositor when actually needed */
+    will-change: transform;
 }
 
 .project-card a {
     display: block;
 }
 
+/*
+ * Project images:
+ *  * explicit aspect-ratio so the browser reserves space before the image loads
+ *    -> prevents layout shift / content jump that causes perceived jank
+ *  * object-fit: cover keeps them clean
+ *  * The lazy-loaded images are decoded off the main thread via HTML decoding="async"
+ */
 .project-card img {
     width: 100%;
     aspect-ratio: 4/3;
     object-fit: cover;
-    transition: transform 0.3s ease;
-    content-visibility: auto;
+    display: block;
+    /* Skeleton colour while the image loads lazily */
+    background-color: #111;
+    transition: transform 0.6s var(--transition-smooth);
 }
 
 .project-card:hover img {
@@ -630,22 +652,19 @@ a {
 }
 
 /* ===================== ANIMATIONS ===================== */
-.fade-in {
-    opacity: 0;
-    transition: opacity 0.6s ease;
-    will-change: opacity;
-}
 
+/* Scroll fade-in animations removed -- elements render immediately, no JS observer needed */
+.fade-in,
 .fade-in.visible {
     opacity: 1;
+    transform: none;
+    transition: none;
 }
 
-.stagger-1 { transition-delay: 0.1s; }
-.stagger-2 { transition-delay: 0.2s; }
-.stagger-3 { transition-delay: 0.3s; }
-.stagger-4 { transition-delay: 0.4s; }
-.stagger-5 { transition-delay: 0.5s; }
-.stagger-6 { transition-delay: 0.6s; }
+.stagger-1, .stagger-2, .stagger-3,
+.stagger-4, .stagger-5, .stagger-6 {
+    transition-delay: 0s;
+}
 
 /* ===================== MOBILE RESPONSIVE ===================== */
 @media screen and (max-width: 1200px) {
@@ -807,7 +826,7 @@ a {
     align-items: center;
     justify-content: center;
     z-index: 99999;
-    transition: opacity 0.3s ease, visibility 0.3s;
+    transition: opacity 0.5s var(--transition-smooth), visibility 0.5s;
 }
 
 .page-loader.hidden {
@@ -826,4 +845,10 @@ a {
 
 @keyframes spin {
     to { transform: rotate(360deg); }
+}
+
+@supports (-webkit-touch-callout: none) {
+    .parallax-bg {
+        background-attachment: scroll;
+    }
 }
