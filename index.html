@@ -8,12 +8,8 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@300;400;500&family=Source+Sans+3:wght@300;400;500;600&display=swap" rel="stylesheet">
-    <link rel="preload" as="image" href="images/Complete System.png">
-    <link rel="preload" as="image" href="images/Top View of Trajectory.png">
-    <link rel="preload" as="image" href="images/Glider Car Style Render.jpg">
-    <link rel="preload" as="image" href="images/Hybrid Rocket Image.png">
-    <link rel="preload" as="image" href="images/Jack Render.PNG">
-    <link rel="preload" as="image" href="images/Robot Render.png">
+    <!-- Preload hero image so it's ready immediately -->
+    <link rel="preload" as="image" href="images/Space Image 2.jpg">
 </head>
 <body>
     <div class="page-loader">
@@ -54,7 +50,8 @@
     </header>
 
     <section class="hero hero-home">
-        <div class="parallax-bg"></div>
+        <!-- JS parallax: div is moved via transform, not background-attachment:fixed -->
+        <div class="parallax-bg" aria-hidden="true"></div>
         <h1>Portfolio</h1>
         <h2>Christian Jaggard</h2>
         <div class="corner-container">
@@ -78,7 +75,8 @@
             </a>
         </div>
         <div class="about-img fade-in stagger-1">
-            <img src="images/Profile Picture.jpg" alt="Christian Jaggard">
+            <!-- Profile image is above fold on some viewports; no lazy load -->
+            <img src="images/Profile Picture.jpg" alt="Christian Jaggard" width="450" height="600" decoding="async">
         </div>
     </section>
 
@@ -87,7 +85,8 @@
         <div class="project-grid">
             <div class="project-card fade-in stagger-1">
                 <a href="Anti-Drone.html">
-                    <img src="images/Complete System.png" alt="Anti-Drone Technology">
+                    <!-- loading="lazy" + decoding="async" on all project images -->
+                    <img src="images/Complete System.png" alt="Anti-Drone Technology" width="800" height="600" loading="lazy" decoding="async">
                     <div class="project-card-content">
                         <p>Anti-Drone Technology</p>
                         <span>Arduino • 3D Printing • Security Systems</span>
@@ -96,7 +95,7 @@
             </div>
             <div class="project-card fade-in stagger-2">
                 <a href="AAIA-Project.html">
-                    <img src="images/Top View of Trajectory.png" alt="Cerberus Mission">
+                    <img src="images/Top View of Trajectory.png" alt="Cerberus Mission" width="800" height="600" loading="lazy" decoding="async">
                     <div class="project-card-content">
                         <p>AIAA Space Weather Mission</p>
                         <span>ANSYS STK • Orbital Mechanics • Heliophysics</span>
@@ -105,7 +104,7 @@
             </div>
             <div class="project-card fade-in stagger-3">
                 <a href="Glider-Design.html">
-                    <img src="images/Glider Car Style Render.jpg" alt="Glider Design">
+                    <img src="images/Glider Car Style Render.jpg" alt="Glider Design" width="800" height="600" loading="lazy" decoding="async">
                     <div class="project-card-content">
                         <p>Glider Design Project</p>
                         <span>SOLIDWORKS • Blender • Aerodynamics</span>
@@ -114,7 +113,7 @@
             </div>
             <div class="project-card fade-in stagger-4">
                 <a href="HRAA.html">
-                    <img src="images/Hybrid Rocket Image.png" alt="Analysis App">
+                    <img src="images/Hybrid Rocket Image.png" alt="Analysis App" width="800" height="600" loading="lazy" decoding="async">
                     <div class="project-card-content">
                         <p>Hybrid Rocket Analysis App</p>
                         <span>Python • Propulsion • Data Visualization</span>
@@ -123,7 +122,7 @@
             </div>
             <div class="project-card fade-in stagger-5">
                 <a href="Jack-Project.html">
-                    <img src="images/Jack Render.PNG" alt="Jack Design">
+                    <img src="images/Jack Render.PNG" alt="Jack Design" width="800" height="600" loading="lazy" decoding="async">
                     <div class="project-card-content">
                         <p>Aircraft Jack Project</p>
                         <span>SOLIDWORKS • ANSYS • Structural Analysis</span>
@@ -132,7 +131,7 @@
             </div>
             <div class="project-card fade-in stagger-6">
                 <a href="Mechanical-Robot.html">
-                    <img src="images/Robot Render.png" alt="Robot Project">
+                    <img src="images/Robot Render.png" alt="Robot Project" width="800" height="600" loading="lazy" decoding="async">
                     <div class="project-card-content">
                         <p>Mechanical Robot Project</p>
                         <span>CAD • Laser Cutting • Mechanism Design</span>
@@ -153,10 +152,12 @@
     </section>
 
     <script>
+        /* ── Page loader ── */
         window.addEventListener('load', function() {
             document.querySelector('.page-loader').classList.add('hidden');
         });
 
+        /* ── Header hide/show on scroll ── */
         var lastScroll = 0;
         var header = document.getElementById('scroll-header');
 
@@ -178,8 +179,9 @@
                 header.classList.remove('hide');
             }
             lastScroll = currentScroll;
-        });
+        }, { passive: true }); // passive: true lets the browser skip waiting for JS before scrolling
 
+        /* ── Dropdown menu ── */
         document.addEventListener('DOMContentLoaded', function() {
             var dropdowns = document.querySelectorAll('.dropdown');
             dropdowns.forEach(function(dropdown) {
@@ -189,9 +191,7 @@
                     e.preventDefault();
                     e.stopPropagation();
                     document.querySelectorAll('.dropdown-content').forEach(function(m) {
-                        if (m !== menu) {
-                            m.classList.remove('show');
-                        }
+                        if (m !== menu) m.classList.remove('show');
                     });
                     menu.classList.toggle('show');
                 });
@@ -209,22 +209,12 @@
                         m.classList.remove('show');
                     });
                 }
-            });
+            }, { passive: true });
         });
 
-        var observer = new IntersectionObserver(function(entries) {
-            entries.forEach(function(entry) {
-                if (entry.isIntersecting) {
-                    entry.target.classList.add('visible');
-                    observer.unobserve(entry.target);
-                }
-            });
-        }, { threshold: 0.1 });
+        /* Scroll animations removed -- nothing to observe */
 
-        document.querySelectorAll('.fade-in').forEach(function(el) {
-            observer.observe(el);
-        });
-
+        /* ── Smooth anchor scroll ── */
         document.querySelectorAll('a[href^="#"]').forEach(function(anchor) {
             anchor.addEventListener('click', function(e) {
                 e.preventDefault();
@@ -234,6 +224,8 @@
                 }
             });
         });
+
+
     </script>
 </body>
 </html>
