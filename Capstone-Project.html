@@ -10,7 +10,7 @@
     <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@300;400;500&family=Source+Sans+3:wght@300;400;500;600&display=swap" rel="stylesheet">
     <style>
         .hero-capstone .parallax-bg {
-            background-image: url('Image 5 (Speed Correction).png');
+            background-image: url('Satellite Render.png');
             background-size: cover;
             background-position: center;
             filter: brightness(0.8) saturate(1.2);
@@ -173,11 +173,11 @@
         <div class="about-text fade-in" style="max-width: 100%;">
             <div class="wip-banner">
                 <span class="wip-dot"></span>
-                Currently In Progress
+                Currently Completed
             </div>
             <h3>Project Description</h3>
             <p>AER813 — Space Systems Design Project is the final-year capstone for the aerospace engineering program at Toronto Metropolitan University. Our team is designing the <strong>SOOS-1</strong> (Satellite On-Orbit Servicing) spacecraft: an autonomous mothership that launches to geostationary orbit, rendezvous with five defunct commercial satellites, docks with each one via a universal engine-bell capture mechanism, and either restores them to their operational GEO slot or passivates them into a graveyard orbit.</p>
-            <p>The mission targets five real satellites — INTELSAT-603, ITALSAT-2, THAICOM-1, GOES-1, and HISPSAT-1C — each drifting in different graveyard inclinations between 4.87° and 13.74°. The spacecraft carries detachable AOC modules that remain permanently attached to each serviced satellite to provide attitude and stationkeeping control for the remainder of its renewed life.</p>
+            <p>The mission targets five real satellites INTELSAT-603, ITALSAT-2, THAICOM-1, GOES-1, and HISPSAT-1C each drifting in different graveyard inclinations between 4.87° and 13.74°. The spacecraft carries detachable AOC modules that remain permanently attached to each serviced satellite to provide attitude and stationkeeping control for the remainder of its renewed life.</p>
             <div class="roles-row">
                 <span class="role-badge">ANSYS STK</span>
                 <span class="role-badge">MATLAB</span>
@@ -217,12 +217,12 @@
         <p class="section-label" style="text-align:center;">Mission Animation</p>
         <div class="info-media fade-in" style="max-width: 100%; width: 100%;">
             <video autoplay muted loop playsinline controls width="100%" height="auto">
-                <source src="Capstone Render.mp4" type="video/mp4">
+                <source src="Final Animation High Quality.mp4" type="video/mp4">
                 Your browser does not support the video tag.
             </video>
         </div>
         <div class="info-text fade-in" style="max-width: 780px; text-align: center; margin-top: 32px;">
-            <p>The mission animation was produced in Blender, driven by trajectory data exported from ANSYS STK. The sequence depicts the full rendezvous profile — from the mothership's 28.5° inclined launch trajectory through the first docking with INTELSAT-603 at graveyard orbit, with each subsequent capture shown in order. Booster separation, transfer burns, and proximity operations are all visualised in the animation.</p>
+            <p>The mission animation was produced in Blender, driven by trajectory data exported from ANSYS STK. The sequence depicts the full rendezvous profile from the mothership's 28.5° inclined launch trajectory through the first docking with INTELSAT-603 at graveyard orbit, with each subsequent capture shown in order. Booster separation, transfer burns, and proximity operations are all visualised in the animation.</p>
         </div>
     </section>
 
@@ -230,7 +230,7 @@
     <section class="info-section reverse">
         <div class="info-text fade-in">
             <p class="section-label">Orbital Design — STK</p>
-            <p>Using ANSYS STK, I modelled the orbital trajectories for the complete servicing sequence. Each of the five target satellites occupies a unique graveyard orbit with its own inclination, RAAN, and longitude — making the path between them a constrained multi-stop optimisation problem. STK was used to propagate the orbits to year 2035 and simulate each rendezvous, producing the delta-V and fuel consumption figures verified against the MATLAB results.</p>
+            <p>Using ANSYS STK, I modelled the orbital trajectories for the complete servicing sequence. Each of the five target satellites occupies a unique graveyard orbit with its own inclination, RAAN, and longitude making the path between them a constrained multi-stop optimisation problem. STK was used to propagate the orbits to year 2035 and simulate each rendezvous, producing the delta-V and fuel consumption figures verified against the MATLAB results.</p>
             <p>Ground station access times were also simulated using NASA's three Deep Space Network antennas (Goldstone, Madrid, Canberra), confirming continuous communication coverage is maintained throughout the mission profile.</p>
         </div>
         <div class="info-media fade-in stagger-1">
@@ -246,7 +246,7 @@
         </div>
         <div class="info-text fade-in stagger-1">
             <p class="section-label">ΔV &amp; Fuel Optimisation — MATLAB</p>
-            <p>I wrote a constrained Travelling Salesman Problem solver in MATLAB to find the optimal satellite visiting order. The algorithm builds a cost matrix from both plane-change ΔV (a function of relative inclination and RAAN) and longitude phasing ΔV for each possible inter-satellite transfer, then exhaustively searches all permutations of the middle three targets — with INTELSAT-603 fixed first to shed module mass early, and HISPSAT-1C fixed last due to design constraints.</p>
+            <p>I wrote a constrained Travelling Salesman Problem solver in MATLAB to find the optimal satellite visiting order. The algorithm builds a cost matrix from both plane-change ΔV (a function of relative inclination and RAAN) and longitude phasing ΔV for each possible inter-satellite transfer, then exhaustively searches all permutations of the middle three targets with INTELSAT-603 fixed first to shed module mass early, and HISPSAT-1C fixed last due to design constraints.</p>
             <p>This approach reduced total mission fuel from 11.9 T (unconstrained order) to 10.6 T, freeing over 1,300 kg of mass allocation for other subsystems. The full velocity and fuel requirements for each leg were then validated in STK, with results agreeing closely with the MATLAB model.</p>
         </div>
     </section>
@@ -255,11 +255,11 @@
     <section class="info-section reverse">
         <div class="info-text fade-in">
             <p class="section-label">Mission Visualisation — Blender</p>
-            <p>The complete mission sequence was animated in Blender using keyframe data derived directly from the STK trajectory outputs. The scene includes a hierarchical spacecraft rig — a Launch_Vehicle parent object with the mothership and booster stages as children — with tangent-aligned rotation applied through quaternion composition to keep the spacecraft oriented along its velocity vector at all times.</p>
-            <p>Booster separation is handled via a Child Of constraint with a gradual influence fade, smoothly detaching the stage at the correct mission time. A chase camera with a local offset tracks the mothership throughout, and the closest approach to INTELSAT-603 at approximately 26.6 hours is captured in detail.</p>
+            <p>The complete mission sequence was animated in Blender using keyframe data derived directly from the STK trajectory outputs. The scene includes a hierarchical spacecraft rig a launch vehicle parent object with the mothership and booster stages as children with tangent aligned rotation applied through quaternion composition to keep the spacecraft oriented along its velocity vector at all times.</p>
+            <p>Booster separation is handled via a Child Of constraint with a gradual influence fade, smoothly detaching the stage at the correct mission time. A chase camera with a local offset tracks the mothership throughout, and the closest approach to INTELSAT-603 is captured in detail.</p>
         </div>
         <div class="info-media fade-in stagger-1">
-            <img src="Image 5 (Speed Correction).png" alt="Blender animation still" style="border-radius:8px;">
+            <img src="Satellite Render.png" alt="Blender animation still" style="border-radius:8px;">
         </div>
     </section>
 
@@ -267,10 +267,10 @@
     <section class="about" style="flex-direction: column; text-align: center; max-width: 900px; padding-top: 40px;">
         <div class="about-text fade-in" style="max-width: 100%;">
             <h3>Team</h3>
-            <p>The project is a collaboration between Evan Aceti, Giuseppe Botta, Kyle Clark, Christian Jaggard, and Elbron Merza, supervised by Dr. Krishna Kumar. Task responsibilities are divided across orbital path determination and STK simulations, attitude control system design, communications subsystem design, and demonstrator hardware development. The Critical Design Review was submitted in March 2026 and the project continues toward the Flight Readiness Review.</p>
+            <p>The project is a collaboration between Evan Aceti, Giuseppe Botta, Kyle Clark, Christian Jaggard, Elbron Merza, Bao Tran, Jakob Kluwe, Adil Baig, Arman Suleman, Zaid Al-lababidi, Kimia Baheri and Lael Alfaro supervised by Dr. Krishna Kumar. Task responsibilities are divided across orbital path determination and STK simulations, attitude control system design, communications subsystem design, and demonstrator hardware development. The Critical Design Review was submitted in March 2026 and the project continues toward the Flight Readiness Review.</p>
             <div class="wip-banner" style="margin-top: 16px;">
                 <span class="wip-dot"></span>
-                Active development — Flight Readiness Review pending
+                Active development — Flight Readiness Review Completed
             </div>
         </div>
     </section>
