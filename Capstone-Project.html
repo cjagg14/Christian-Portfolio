@@ -122,6 +122,131 @@
             .stat-divider { display: none; }
             .stat-row { gap: 40px; }
         }
+
+        /* ── Dean's Award Section ── */
+        .award-section {
+            max-width: 1000px;
+            margin: 0 auto;
+            padding: 80px 40px;
+            text-align: center;
+        }
+
+        .award-badge {
+            display: inline-flex;
+            align-items: center;
+            gap: 12px;
+            background: linear-gradient(135deg, rgba(255, 196, 0, 0.12), rgba(255, 160, 0, 0.08));
+            border: 1px solid rgba(255, 196, 0, 0.4);
+            border-radius: 30px;
+            padding: 10px 28px;
+            font-family: var(--font-body);
+            font-size: 13px;
+            font-weight: 600;
+            letter-spacing: 0.15em;
+            text-transform: uppercase;
+            color: #f5c842;
+            margin-bottom: 36px;
+        }
+
+        .award-trophy {
+            font-size: 18px;
+        }
+
+        .award-section h3 {
+            font-family: var(--font-display);
+            font-size: clamp(28px, 4vw, 42px);
+            font-weight: 300;
+            color: var(--color-text);
+            margin: 0 0 20px;
+            line-height: 1.2;
+        }
+
+        .award-section p {
+            font-size: 16px;
+            line-height: 1.75;
+            color: var(--color-text-muted);
+            max-width: 700px;
+            margin: 0 auto 48px;
+        }
+
+        .award-photo-wrapper {
+            position: relative;
+            border-radius: 12px;
+            overflow: hidden;
+            box-shadow: 0 24px 80px rgba(0, 0, 0, 0.5), 0 0 0 1px rgba(255, 196, 0, 0.15);
+            max-width: 860px;
+            margin: 0 auto;
+        }
+
+        .award-photo-wrapper::before {
+            content: '';
+            position: absolute;
+            inset: 0;
+            border-radius: 12px;
+            border: 1px solid rgba(255, 196, 0, 0.2);
+            pointer-events: none;
+            z-index: 2;
+        }
+
+        .award-photo-wrapper img {
+            width: 100%;
+            height: auto;
+            display: block;
+            border-radius: 12px;
+            transition: transform 0.6s ease;
+        }
+
+        .award-photo-wrapper:hover img {
+            transform: scale(1.015);
+        }
+
+        .award-caption {
+            margin-top: 20px;
+            font-size: 13px;
+            letter-spacing: 0.08em;
+            color: var(--color-text-subtle);
+        }
+
+        .award-stats {
+            display: flex;
+            justify-content: center;
+            gap: 48px;
+            margin-top: 56px;
+            flex-wrap: wrap;
+        }
+
+        .award-stat {
+            text-align: center;
+        }
+
+        .award-stat-value {
+            font-family: var(--font-display);
+            font-size: clamp(28px, 3.5vw, 44px);
+            font-weight: 300;
+            color: #f5c842;
+            line-height: 1;
+            margin-bottom: 8px;
+        }
+
+        .award-stat-label {
+            font-size: 12px;
+            letter-spacing: 0.15em;
+            text-transform: uppercase;
+            color: var(--color-text-subtle);
+        }
+
+        .award-stat-divider {
+            width: 1px;
+            background: rgba(255, 196, 0, 0.2);
+            align-self: stretch;
+            min-height: 50px;
+        }
+
+        @media (max-width: 600px) {
+            .award-stat-divider { display: none; }
+            .award-stats { gap: 32px; }
+            .award-section { padding: 60px 24px; }
+        }
     </style>
 </head>
 <body>
@@ -241,7 +366,6 @@
     <!-- MATLAB Optimization Work -->
     <section class="info-section">
         <div class="info-media fade-in">
-            <!-- Placeholder — replace with a MATLAB figure screenshot if available -->
             <img src="table.png" alt="Mission Requirements Table">
         </div>
         <div class="info-text fade-in stagger-1">
@@ -271,6 +395,38 @@
             <div class="wip-banner" style="margin-top: 16px;">
                 <span class="wip-dot"></span>
                 Active development — Flight Readiness Review Completed
+            </div>
+        </div>
+    </section>
+
+    <!-- ── Dean's Program Award ── -->
+    <section class="award-section fade-in">
+        <div class="award-badge">
+            <span class="award-trophy">🏆</span>
+            Dean's Program Award — 2026
+        </div>
+        <h3>Best Capstone in Aerospace Engineering</h3>
+        <p>At TMU's Engineering &amp; Architectural Science Day 2026, the SOOS-1 team was awarded the <strong>Dean's Program Award</strong> — recognising the top capstone project across all of aerospace engineering. Out of every senior design team in the program, SOOS-1 was selected as the standout project, earning a $1,000 prize. The team presented the full mission design alongside a physical hardware demonstrator, showcasing the complete systems engineering process from concept through the Flight Readiness Review.</p>
+
+        <div class="award-photo-wrapper fade-in stagger-1">
+            <img src="Deans Award.JPG" alt="SOOS-1 team receiving the Dean's Program Award at TMU Engineering & Architectural Science Day 2026">
+        </div>
+        <p class="award-caption">Engineering &amp; Architectural Science Day — April 24, 2026 · Toronto Metropolitan University</p>
+
+        <div class="award-stats">
+            <div class="award-stat">
+                <div class="award-stat-value">$1,000</div>
+                <div class="award-stat-label">Prize Award</div>
+            </div>
+            <div class="award-stat-divider"></div>
+            <div class="award-stat">
+                <div class="award-stat-value">#1</div>
+                <div class="award-stat-label">Aerospace Program</div>
+            </div>
+            <div class="award-stat-divider"></div>
+            <div class="award-stat">
+                <div class="award-stat-value">12</div>
+                <div class="award-stat-label">Team Members</div>
             </div>
         </div>
     </section>
